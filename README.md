@@ -1,2 +1,2 @@
-# s2p-predictor
+# S2P-Predictor
 The Predictor system that takes on the data from user to predict the outcome of given cricket match and predicted performance of each player playing.
