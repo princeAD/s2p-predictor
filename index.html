@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>S2P-Predictor Initial Design</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+    <h1>Winning Team Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="team-name-first" placeholder="Name Of First Team" required="required" />
+      <input type="text" name="team-name-second" placeholder="Name Of Second Team" required="required" />
+		  <input type="text" name="match-place" placeholder="Place of Match" required="required" />
+
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict Winning Team</button>
+    </form>
+
+   <br>
+   <br>
+   <h3>Possible Winner of the Match:</h3>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
